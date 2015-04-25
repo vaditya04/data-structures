@@ -27,3 +27,5 @@ Graph*  createGraph(int V);
 void addEdge(Graph* graph, int src, int dest);
 
 void printGraph (Graph* graph);
+
+void DFS (Graph* graph, int v, int connected, int marked[]);

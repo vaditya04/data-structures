@@ -57,7 +57,7 @@ void addEdge (Graph* graph, int src, int dest)
 	{
 		while (temp->next != NULL)
 		{
-			if (temp->dest = src)
+			if (temp->dest == src)
 				break;			
 			temp = temp->next;
 		}
@@ -82,4 +82,21 @@ void printGraph (Graph* graph)
 
 		printf("\n");
 	}
+}
+
+void DFS ( Graph* graph, int v, int connected, int marked[])
+{
+	marked[v] = connected;
+
+	adjListNode* temp = graph->array[v].head;
+
+	while (temp != NULL)
+	{
+		if (!marked[temp->dest])
+		{
+			DFS(graph, temp->dest, connected, marked);
+		}
+		temp = temp->next;
+	}
+
 }
